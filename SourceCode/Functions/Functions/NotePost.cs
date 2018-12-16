@@ -18,7 +18,7 @@ namespace SEI2018.Functions
 
         [FunctionName(nameof(NotePost))]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "note")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "note")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation($"{nameof(NotePost)} function processed a request.");

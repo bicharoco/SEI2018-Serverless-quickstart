@@ -18,7 +18,7 @@ namespace SEI2018.Functions
 
         [FunctionName(nameof(NotePut))]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "note/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "note/{id}")] HttpRequest req,
             string id,
             ILogger log)
         {

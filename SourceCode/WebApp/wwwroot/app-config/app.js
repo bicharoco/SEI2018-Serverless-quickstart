@@ -5,6 +5,7 @@
         .module("sei2018app", [
             "ngRoute",
             "ngCookies",
-            "ngAnimate"
+            "ngAnimate",
+            "AdalAngular"
         ])
 })();

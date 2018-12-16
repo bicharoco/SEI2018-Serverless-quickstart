@@ -15,7 +15,7 @@ namespace SEI2018.Functions
 
         [FunctionName(nameof(NoteGetAll))]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "note")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "note")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation($"{nameof(NoteGetAll)} function processed a request.");

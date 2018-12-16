@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('sei2018app')
-        .controller('MainController', function ($scope, $http) {
+        .controller('MainController', function ($scope, $http, adalAuthenticationService) {
             let _baseApiAddress = window.location.hostname == 'localhost'
                                 ? 'http://localhost:7071/'
                                 : 'https://sei-2018-main-function.azurewebsites.net/';
@@ -54,6 +54,8 @@
                 $('#myModal').modal('show');
             };
 
-            $scope.deleteNote = (noteToDelete) => $http.delete(_baseNoteAddress + noteToDelete.id).then((response) => _getNotes());;
+            $scope.deleteNote = (noteToDelete) => $http.delete(_baseNoteAddress + noteToDelete.id).then((response) => _getNotes());
+
+            $scope.logout = () => adalAuthenticationService.logout();
         });
 })();

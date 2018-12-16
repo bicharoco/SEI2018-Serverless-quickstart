@@ -16,7 +16,7 @@ namespace SEI2018.Functions
 
         [FunctionName(nameof(NoteDelete))]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "note/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "note/{id}")] HttpRequest req,
             string id,
             ILogger log)
         {

@@ -43,6 +43,15 @@ Along my guide, you create all the projects and code need all by yourself or you
   - Configure the choosen environment (in VS Code, install the dependencies suggested by Azure and create a Azure Function project)
 - Create all the functions that you need and procceed with the deployment using the selected tool
   - Remeber, to use the Cosmos DB, you'll need to install the DocumentDB (this was the previous name of the service) packages to your code
+- As we are using diferent servers to serve the backend and the frontend, don't forget to configure the CORS feature, so that in the backend we can accept frontend incoming requests
+
+## 4th step - Azure active directory
+- Go to the Function app configuration section and open the `Authentication/Authorization` menu
+- Enable the service and click the Azure Active Directory (AAD) button to configure it
+- Now just follow the creation process (I selected the express configuration)
+- As we have a structure where the frontend is seperate from the backend, we need to make a few tweeks in the AAD configuration:
+  - Go to the AAD app manifest and change the `oauth2AllowImplicitFlow` property from false to true and press save
+  - If you're making your own frontend you will need to configure the `adal.js` in your app (see the [AngularJS integration with Azure Active Directory](https://docs.microsoft.com/pt-pt/azure/active-directory/develop/quickstart-v1-angularjs-spa) reference)
 
 ## References
 - [Azure WebApp Tutorial](https://docs.microsoft.com/en-us/azure/functions/tutorial-static-website-serverless-api-with-database)
@@ -50,3 +59,5 @@ Along my guide, you create all the projects and code need all by yourself or you
 - [Azure Cosmos DB quickguide](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
 - [Azure HTTP function quickguide](https://blogs.msdn.microsoft.com/benjaminperkins/2018/11/02/azure-functions-http-trigger/)
 - [Azure HTTP functions reference](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook)
+- [Guide about how to secure Azure Functions with Azure Active Directory](https://peteskelly.com/secure-functions-aad-2/)
+- [AngularJS integration with Azure Active Directory](https://docs.microsoft.com/pt-pt/azure/active-directory/develop/quickstart-v1-angularjs-spa)
