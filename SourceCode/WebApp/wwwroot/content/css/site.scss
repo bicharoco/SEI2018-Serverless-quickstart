@@ -1,4 +1,54 @@
+html,
+body,
+body > .content {
+    height: 100%;
+}
 
-.teste {
-    color: black;
+body {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+.notes-list {
+    height: 70%;
+    overflow: auto;
+    margin: auto;
+
+    .title {
+        position: relative;
+
+        > button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    // .note-item {
+    //     padding-bottom: 1em;
+    // }
+
+    // h1,
+    // div {
+    //     display: inline-block;
+    // }
+}
+
+.notes-add-section {
+    height: 30%;
+    overflow: auto;
+}
+
+.notes-add-section,
+#myModal {
+    .row {
+        padding-bottom: 1em;
+        
+        input,
+        textarea {
+            width: 100%;
+            max-width: 25em;
+        }
+    }
 }

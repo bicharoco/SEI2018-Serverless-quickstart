@@ -5,12 +5,36 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <!--APP DESCRIPTION HERE-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+    <!--APP TITLE HERE-->
     <title>SEI 2018</title>
+    <!-- Get fonts from google APIs -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:normal,bold,italic,bolditalic,semibold" />
+    <!-- inject:css -->
+    <link rel="stylesheet" href="content/css/libs/bootstrap.min.css?v=1539015426714">
+    <link rel="stylesheet" href="content/css/libs/font-awesome.min.css?v=1539015426714">
+    <link rel="stylesheet" href="content/css/site.css?v=1539015426714">
+    <!-- endinject -->
 </head>
 
 <body>
-    <h1>HELLO WORLD</h1>
+    <div class="content container-fluid" ng-view></div>
+
+    <!-- inject:js -->
+    <script src="libs/jquery.min.js?v=1539015426497423"></script>
+    <script src="libs/angularjs/angular.min.js?v=1539015426497"></script>
+    <script src="libs/angularjs/angular-animate.min.js?v=1539015426497"></script>
+    <script src="libs/angularjs/angular-cookies.min.js?v=1539015426497"></script>
+    <script src="libs/angularjs/angular-route.min.js?v=1539015426497"></script>
+    <script src="libs/angularjs/angular-sanitize.min.js?v=1539015426497"></script>
+    <script src="libs/bootstrap/bootstrap.js?v=1539015426497"></script>
+    <script src="libs/angularjs/i18n/angular-locale_en-gb.js?v=1539015426497"></script>
+    <script src="app-config/app.js?v=1539015426497"></script>
+    <script src="app-config/config.js?v=1539015426497"></script>
+    <script src="app-config/run.js?v=1539015426497"></script>
+    <script src="controllers/mainController.js?v=1539015426497"></script>
+    <!-- endinject -->
 </body>
 </html>

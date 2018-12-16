@@ -1,0 +1,74 @@
+<div class="notes-list">
+    <div class="title">
+        <h1>Notes list</h1>
+        <button ng-click="getNotes()">Refresh list</button>
+    </div>
+    <div class="note-item" ng-repeat="note in notesList">
+        <div>
+            <label>{{note.title}}</label>
+        </div>
+        <div>
+            <span>{{note.description}}</span>
+        </div>
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" ng-click="openEditModal(note)">Edit</button>
+            <button type="button" class="btn btn-danger" ng-click="deleteNote(note)">Delete</button>
+        </div>
+
+        <hr />
+    </div>
+    <div ng-if="notesList === null">
+        Loading notes...
+    </div>
+    <div ng-if="notesList.length == 0">
+        There aren't any notes yet.
+    </div>
+</div>
+
+<div class="notes-add-section">
+    <h2>Add a new note</h2>
+    
+    <form ng-submit="addNewNote(newNote)">
+        <div class="row">
+            <div class="col-md-2"><label>Title</label></div>
+            <div class="col-md-10"><input type="text" ng-model="newNote.title" required /></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><label>Description</label></div>
+            <div class="col-md-10"><textarea ng-model="newNote.description" required></textarea></div>
+        </div>
+        <div><input type="submit" ng-disabled="submitingNewNote" value="Submit" /></div>
+    </form>
+</div>
+
+
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit note</h4>
+        </div>
+        <form ng-submit="editNote(noteToEdit)">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2"><label>Title</label></div>
+                    <div class="col-md-10"><input type="text" ng-model="noteToEdit.title" required /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><label>Description</label></div>
+                    <div class="col-md-10"><textarea ng-model="noteToEdit.description" required></textarea></div>
+                </div>
+                <!-- <div><input type="submit" ng-disabled="noteToEdit" value="Submit" /></div> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input class="btn btn-primary" type="submit" ng-disabled="submitingNoteToEdit" value="Save changes" />
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

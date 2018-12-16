@@ -1,8 +1,12 @@
 (function () {
     'use strict';
 
-    angular.module('suggestiveMotionGdprWebApp')
-        .config(function ($routeProvider, $locationProvider, $injector, siteMapProvider) {
-            
+    angular.module('sei2018app')
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'views/index.html',
+                    controller: 'MainController'
+                })
         });
 })();

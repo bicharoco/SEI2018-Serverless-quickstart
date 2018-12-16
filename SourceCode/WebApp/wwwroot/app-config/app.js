@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("suggestiveMotionGdprWebApp", [
+        .module("sei2018app", [
             "ngRoute",
             "ngCookies",
             "ngAnimate"
