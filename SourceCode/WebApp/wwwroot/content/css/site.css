@@ -1,0 +1,34 @@
+html,
+body,
+body > .content {
+  height: 100%; }
+
+body {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white; }
+
+.notes-list {
+  height: 70%;
+  overflow: auto;
+  margin: auto; }
+  .notes-list .title {
+    position: relative; }
+    .notes-list .title > button {
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+.notes-add-section {
+  height: 30%;
+  overflow: auto; }
+
+.notes-add-section .row,
+#myModal .row {
+  padding-bottom: 1em; }
+  .notes-add-section .row input,
+  .notes-add-section .row textarea,
+  #myModal .row input,
+  #myModal .row textarea {
+    width: 100%;
+    max-width: 25em; }
