@@ -8,7 +8,7 @@
                 .when('/', {
                     templateUrl: 'views/index.html',
                     controller: 'MainController',
-                    requireADLogin: window.location.hostname != 'localhost' 
+                    // requireADLogin: window.location.hostname != 'localhost' 
                 });
 
             adalProvider.init(
