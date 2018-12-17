@@ -17,7 +17,7 @@
 
                 return $http.get(_baseNoteAddress).then((response) => {
                     $scope.notesList = response.data;
-                });
+                }, (response) => console.log(response));
             };
             $scope.getNotes = _getNotes;
             _getNotes();
